@@ -1,9 +1,11 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
   private Rigidbody2D rb;
+  public int life = 5;
   [SerializeField] private float movementForce;
   [SerializeField] private float jumpForce;
   private float hInput;
@@ -17,7 +19,24 @@ public class Player : MonoBehaviour
       rb = GetComponent<Rigidbody2D>();
       anim = GetComponent<Animator>();
   }
-    void Start()
+
+  private void OnTriggerEnter2D(Collider2D other)
+  {
+      if (other.gameObject.CompareTag("Enemy"))
+      {
+          life -= 1;
+          //Reciba Knockback
+      }
+  }
+
+  private void PlayerDead()
+  {
+      if (life <= 0)
+      {
+          Destroy(gameObject);
+      }
+  }
+  void Start()
     {
 
     }
@@ -28,6 +47,8 @@ public class Player : MonoBehaviour
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
+
+        PlayerDead();
     }
 
     private void FaceTo()
