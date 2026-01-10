@@ -25,7 +25,14 @@ public class Player : MonoBehaviour
       if (other.gameObject.CompareTag("Enemy"))
       {
           life -= 1;
-          //Reciba Knockback
+      }
+
+      if (other.gameObject.CompareTag("Spikes"))
+      {
+          if (GameManager.instance != null)
+          {
+              GameManager.instance.GameOver();
+          }
       }
   }
 
@@ -33,7 +40,10 @@ public class Player : MonoBehaviour
   {
       if (life <= 0)
       {
-          Destroy(gameObject);
+          if (GameManager.instance != null)
+          {
+              GameManager.instance.GameOver();
+          }
       }
   }
   void Start()
