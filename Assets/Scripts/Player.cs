@@ -85,6 +85,11 @@ public class Player : MonoBehaviour
           SceneManager.LoadScene(ThisScene + 1);
       }
       
+      if (other.gameObject.CompareTag("Trap"))
+      {
+          ApplyKnockback(other.transform);
+      }
+      
      if (other.gameObject.CompareTag("Void"))
       {
           if (GameManager.instance != null)

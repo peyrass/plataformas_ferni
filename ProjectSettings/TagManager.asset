@@ -9,6 +9,7 @@ TagManager:
   - EnemyKiller
   - Exit
   - Void
+  - Trap
   layers:
   - Default
   - TransparentFX
