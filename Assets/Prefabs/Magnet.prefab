@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5890962735335563505}
   - component: {fileID: 1378164514871497000}
   - component: {fileID: 9058473756433638656}
-  - component: {fileID: 1826043196429445416}
   m_Layer: 0
   m_Name: Grip
   m_TagString: Untagged
@@ -28,8 +27,8 @@ Transform:
   m_GameObject: {fileID: 1459113460574559927}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.1726, y: 2.1726, z: 2.1726}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1973946162137461982}
@@ -78,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c6891a5d7162cd349a7e730b8f7954f4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -119,24 +118,12 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.59
---- !u!114 &1826043196429445416
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1459113460574559927}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f41932b91c3e8d8428ddbb7d83fb6b67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Offset: {x: 0, y: -0.0518584}
+  m_Radius: 0.45272818
 --- !u!1 &1841472322029938885
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,6 +136,7 @@ GameObject:
   - component: {fileID: 116143451373103376}
   - component: {fileID: 6275234637453346463}
   - component: {fileID: 5444729059449545067}
+  - component: {fileID: 326879816391798400}
   m_Layer: 0
   m_Name: Magnet
   m_TagString: Untagged
@@ -234,7 +222,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 10.21
+  m_Radius: 9
 --- !u!250 &5444729059449545067
 PointEffector2D:
   m_ObjectHideFlags: 0
@@ -255,3 +243,16 @@ PointEffector2D:
   m_ForceMode: 0
   m_Drag: 0
   m_AngularDrag: 0
+--- !u!114 &326879816391798400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841472322029938885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f41932b91c3e8d8428ddbb7d83fb6b67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabCollider: {fileID: 9058473756433638656}

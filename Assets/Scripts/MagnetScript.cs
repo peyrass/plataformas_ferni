@@ -3,21 +3,34 @@ using UnityEngine;
 public class MagnetScript : MonoBehaviour
 {
     private Vector3 offset;
+    [SerializeField] private Collider2D grabCollider;
+    private bool canDrag = false;
 
     void OnMouseDown()
     {
         Vector3 mousePos = Input.mousePosition;
-        mousePos.z = Camera.main.WorldToScreenPoint(transform.parent.position).z;
+        mousePos.z = Mathf.Abs(Camera.main.transform.position.z);
         
         Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(mousePos);
-        offset = transform.parent.position - mouseWorldPos;
+        if (grabCollider.OverlapPoint(mouseWorldPos))
+        {
+            canDrag = true;
+            offset = transform.position - mouseWorldPos;
+        }
+        else
+        {
+            canDrag = false;
+        }
     }
+
     void OnMouseDrag()
     {
+        if (!canDrag) return;
+
         Vector3 mousePos = Input.mousePosition;
-        mousePos.z = Camera.main.WorldToScreenPoint(transform.parent.position).z;
+        mousePos.z = Mathf.Abs(Camera.main.transform.position.z);
 
         Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(mousePos);
-        transform.parent.position = mouseWorldPos + offset;
+        transform.position = mouseWorldPos + offset;
     }
 }
