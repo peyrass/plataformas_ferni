@@ -476,7 +476,7 @@ GameObject:
   - component: {fileID: 587565184}
   - component: {fileID: 587565183}
   - component: {fileID: 587565182}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PlatformTilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1185,7 +1185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fc2e9d9fe6db2f478df7367b6583778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 2
   patrolPath: {fileID: 307930958}
 --- !u!212 &748662904
 SpriteRenderer:
@@ -2941,7 +2941,7 @@ GameObject:
   - component: {fileID: 1917310213}
   - component: {fileID: 1917310212}
   - component: {fileID: 1917310214}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5836,7 +5836,7 @@ Transform:
   m_GameObject: {fileID: 1955435407}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.35, y: -0.58, z: 0}
+  m_LocalPosition: {x: -1.72, y: -0.58, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

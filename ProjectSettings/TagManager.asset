@@ -6,15 +6,16 @@ TagManager:
   tags:
   - Door
   - Enemy
+  - EnemyKiller
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
-  - 
-  - 
+  - Enemy
+  - PlayerAttack
   - 
   - 
   - 
