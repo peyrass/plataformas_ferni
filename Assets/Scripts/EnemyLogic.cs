@@ -58,7 +58,6 @@ public class EnemyLogic : MonoBehaviour
       
       isDead = true;
       GetComponent<Collider2D>().enabled = false;
-      Debug.Log("Enemy Killed");
       
       Player player = FindFirstObjectByType<Player>();
       if (player != null)

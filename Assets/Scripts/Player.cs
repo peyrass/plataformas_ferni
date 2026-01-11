@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
@@ -77,14 +78,21 @@ public class Player : MonoBehaviour
           
           ApplyKnockback(other.transform);
       }
-
-      if (other.gameObject.CompareTag("Spikes"))
+      
+      if (other.gameObject.CompareTag("Exit"))
+      {
+          int ThisScene =  SceneManager.GetActiveScene().buildIndex;
+          SceneManager.LoadScene(ThisScene + 1);
+      }
+      
+     if (other.gameObject.CompareTag("Void"))
       {
           if (GameManager.instance != null)
           {
               GameManager.instance.GameOver();
           }
       }
+      
   }
   
   public void Bounce()
